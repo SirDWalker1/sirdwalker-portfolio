@@ -171,7 +171,7 @@ export default function App() {
             </div>
           </div>
           <p className="mt-6 text-xs opacity-60">
-            Tip: update links above, then deploy with GitHub Pages.
+            
           </p>
         </section>
       </main>
