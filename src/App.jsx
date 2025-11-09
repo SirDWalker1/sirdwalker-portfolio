@@ -48,6 +48,18 @@ export default function App() {
     { label: "Email", href: "mailto:sirdwalker2@gmail.com" },
   ];
 
+   const bots = [
+    {
+      title: "Walker's Helper",
+      desc: "Admin toolkit with slash commands, temp bans, logging, 8ball, roll, userinfo, serverinfo, help menus, and uptime keep-alive. Designed for Roblox military groups and gaming servers.",
+      stack: ["Python", "discord.py", "JSON storage", "Replit uptime"],
+      links: [
+        { label: "Join Server", href: "https://discord.gg/2NGhsURjad" }
+      ],
+    },
+  ];
+
+  
   return (
     <div className="min-h-screen bg-gray-950 text-gray-100">
       <header className="sticky top-0 z-10 backdrop-blur bg-gray-950/70 border-b border-white/10">
@@ -57,6 +69,7 @@ export default function App() {
             <a href="#work" className="opacity-80 hover:opacity-100">Work</a>
             <a href="#skills" className="opacity-80 hover:opacity-100">Skills</a>
             <a href="#services" className="opacity-80 hover:opacity-100">Services</a>
+            <a href="#bots" className="opacity-80 hover:opacity-100">Bots</a>
             <a href="#contact" className="opacity-80 hover:opacity-100">Contact</a>
           </nav>
         </div>
@@ -126,6 +139,40 @@ export default function App() {
           </div>
         </section>
 
+     {/* Discord Bots */}
+     <section id="bots" className="py-12">
+       <h3 className="text-2xl md:text-3xl font-semibold">Discord Bots</h3>
+       <p className="mt-2 text-gray-300 text-sm">
+         Custom bots built for Roblox communities — moderation, payouts, utilities, and automation.
+       </p>
+
+       <div className="mt-6 grid md:grid-cols-3 gap-6">
+         {bots.map((b, idx) => (
+           <article key={idx} className="rounded-2xl border border-white/10 p-5 bg-gray-900">
+             <h4 className="text-lg font-semibold">{b.title}</h4>
+             <p className="mt-2 text-sm opacity-90">{b.desc}</p>
+
+             <div className="mt-4 flex flex-wrap gap-2">
+               {b.stack.map((tag, i) => (
+                 <span key={i} className="text-xs px-2 py-1 rounded-full border border-white/10 opacity-80">
+                   {tag}
+                 </span>
+               ))}
+             </div>
+
+             <div className="mt-4 flex flex-wrap gap-3">
+               {b.links.map((l, i) => (
+                 <a key={i} href={l.href} target="_blank" className="text-sm underline opacity-90 hover:opacity-100">
+                   {l.label}
+                 </a>
+               ))}
+             </div>
+           </article>
+         ))}
+       </div>
+     </section>
+
+        
         <section className="py-12">
           <h3 className="text-2xl md:text-3xl font-semibold">How I work</h3>
           <ol className="mt-6 grid md:grid-cols-4 gap-6 text-sm">
